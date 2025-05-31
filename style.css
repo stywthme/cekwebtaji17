@@ -1,0 +1,191 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #4a4a4a;
+}
+
+/* Header */
+header {
+    background: #d32f2f;
+    background-image: linear-gradient(135deg, #d32f2f 0%, #a02121 100%), url('path/to/your/batik-pattern.png');
+    color: #ffffff;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    height: 70px; /* Sesuaikan ukuran logo */
+    width: auto;
+}
+
+.logo.permata {
+    border-radius: 50%; /* Membuat placeholder logo bulat */
+    background-color: white;
+    padding: 5px;
+}
+
+.header-text h1, .header-text h2, .header-text p {
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.header-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.header-text h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.tagline {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    display: inline-block;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+section {
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+}
+
+#pengantar, #poster { /* Menambahkan #poster agar ikut terpusat */
+    text-align: center;
+}
+
+#pengantar h2, #jadwal-acara h2, #poster h2 { /* Menambahkan #poster h2 agar stylenya sama */
+    font-family: 'Montserrat', sans-serif;
+    color: #d32f2f;
+    margin-top: 0;
+}
+
+/* ================================= */
+/* ===== STYLE POSTER DIMASUKKAN DI SINI ===== */
+/* ================================= */
+/* Poster Section */
+#poster img { 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 12px; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2); 
+    margin-top: 1rem; 
+    max-width: 500px; 
+}
+/* ================================= */
+/* ===== AKHIR DARI STYLE POSTER ===== */
+/* ================================= */
+
+
+/* Event Grid Layout */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.event-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.event-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d32f2f;
+    padding-bottom: 10px;
+}
+
+.event-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.event-detail svg {
+    color: #d32f2f;
+    flex-shrink: 0;
+}
+
+.event-detail p {
+    margin: 0;
+}
+
+.button {
+    background-color: #d32f2f;
+    color: #ffffff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: auto; /* Mendorong tombol ke bawah */
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #a02121;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #333;
+    color: #f4f4f4;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .logo {
+        height: 60px;
+    }
+    .header-text h1 { font-size: 1.8rem; }
+    .header-text h2 { font-size: 1.2rem; }
+}
