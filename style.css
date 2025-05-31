@@ -34,156 +34,93 @@ header {
     padding: 1.5rem 1rem;
     text-align: center;
 }
-
 .header-container {
     display: flex;
-    flex-direction: column; /* Default: susun ke bawah untuk HP */
+    flex-direction: column;
     align-items: center;
     gap: 1.5rem;
 }
-
-.logo {
-    height: 60px;
-    width: 60px;
-    object-fit: contain;
-}
-
-.logo.permata {
-    border-radius: 50%;
-    background-color: white;
-    padding: 5px;
-}
-
-.header-text h1 {
-    font-family: var(--font-judul);
-    font-size: 1.8rem;
-    font-weight: 900;
-}
-
-.header-text h2 {
-    font-size: 1rem;
-    font-weight: 400;
-    opacity: 0.9;
-}
-.header-text p {
-    font-size: 0.9rem;
-}
-
-.tagline {
-    font-family: var(--font-judul);
-    margin-top: 1.5rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-}
+.logo { height: 60px; width: 60px; object-fit: contain; }
+.logo.permata { border-radius: 50%; background-color: white; padding: 5px; }
+.header-text h1 { font-family: var(--font-judul); font-size: 1.8rem; font-weight: 900; }
+.header-text h2 { font-size: 1rem; font-weight: 400; opacity: 0.9; }
+.header-text p { font-size: 0.9rem; }
+.tagline { font-family: var(--font-judul); margin-top: 1.5rem; font-size: 1.2rem; font-weight: 700; }
 
 /* Konten Utama */
-main {
-    padding: 1rem;
-}
+main { padding: 1rem; }
+section { background-color: white; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); }
+section h2 { font-family: var(--font-judul); font-size: 1.6rem; color: var(--warna-merah); margin-bottom: 1rem; text-align: center; }
+section > p { font-size: 1rem; color: #555; max-width: 60ch; margin-left: auto; margin-right: auto; text-align: center; }
+#poster img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 1rem; }
 
-section {
-    background-color: white;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    text-align: center;
-}
-
-section h2 {
-    font-family: var(--font-judul);
-    font-size: 1.6rem;
-    color: var(--warna-merah);
-    margin-bottom: 1rem;
-}
-
-section p {
-    font-size: 1rem;
-    color: #555;
-    max-width: 60ch; /* Batasi panjang baris agar mudah dibaca */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#poster img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 1rem;
-}
-
-/* Kartu Jadwal Acara */
+/* --- Gaya Kartu Jadwal Acara (Sesuai Permintaan Anda) --- */
 .event-grid {
-    display: flex; /* Di HP, kita buat jadi flex column saja */
+    display: flex;
     flex-direction: column;
     gap: 1.5rem;
     margin-top: 2rem;
 }
-
 .event-card {
-    background-color: #fafafa;
-    border: 1px solid #eee;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
     border-radius: 10px;
-    padding: 1.5rem;
-    text-align: left;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
-
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
 .event-card h3 {
-    font-family: var(--font-judul);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d32f2f;
+    padding-bottom: 10px;
 }
-
 .event-detail {
-    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
 }
-
+.event-detail svg {
+    color: var(--warna-merah);
+    flex-shrink: 0;
+}
 .event-detail p {
-    font-size: 0.95rem;
-    text-align: left;
-    color: var(--warna-teks);
+    margin: 0;
+    font-size: 0.95rem; /* Menyesuaikan ukuran font agar tetap terbaca */
 }
-
 .button {
-    display: block;
-    width: 100%;
     background-color: var(--warna-merah);
-    color: white;
-    padding: 12px;
-    text-align: center;
+    color: #ffffff;
+    padding: 12px 25px;
     text-decoration: none;
     border-radius: 8px;
-    font-weight: 700;
-    margin-top: 1rem;
-    transition: background-color 0.2s;
+    font-weight: 500;
+    text-align: center;
+    margin-top: auto; /* Mendorong tombol ke bawah */
+    transition: background-color 0.3s;
 }
-
 .button:hover {
     background-color: var(--warna-merah-gelap);
 }
+/* --- Akhir dari Gaya Kartu Jadwal Acara --- */
 
 /* Footer */
-footer {
-    background-color: #333;
-    color: #ddd;
-    text-align: center;
-    padding: 2rem 1rem;
-    font-size: 0.9rem;
-}
-footer p {
-    margin-bottom: 0.5rem;
-}
-
+footer { background-color: #333; color: #ddd; text-align: center; padding: 2rem 1rem; font-size: 0.9rem; }
+footer p { margin-bottom: 0.5rem; }
 
 /* --- Gaya untuk Tablet & Desktop (Layar Sedang) --- */
 @media (min-width: 768px) {
     /* Header */
-    .header-container {
-        flex-direction: row; /* Kembali ke samping-sampingan */
-        justify-content: space-between;
-        max-width: 1100px;
-        margin: 0 auto;
-    }
+    .header-container { flex-direction: row; justify-content: space-between; max-width: 1100px; margin: 0 auto; }
     .header-text h1 { font-size: 2.2rem; }
     .header-text h2 { font-size: 1.1rem; }
 
@@ -195,9 +132,9 @@ footer p {
     .event-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk tablet */
+        gap: 25px; /* Menyesuaikan gap dari CSS Anda */
     }
 }
-
 
 /* --- Gaya untuk Desktop Besar (Layar Lebar) --- */
 @media (min-width: 1024px) {
@@ -206,6 +143,6 @@ footer p {
         grid-template-columns: repeat(3, 1fr);
     }
     #poster img {
-        max-width: 500px; /* Batasi lebar poster di desktop */
+        max-width: 500px;
     }
 }
