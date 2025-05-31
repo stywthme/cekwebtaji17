@@ -1,14 +1,3 @@
-/* ================================= */
-/* ===== PERBAIKAN & BEST PRACTICE ===== */
-/* ================================= */
-* {
-    box-sizing: border-box; /* Memastikan padding tidak merusak layout */
-}
-html {
-    scroll-behavior: smooth; /* Efek scroll halus saat menu di-klik */
-}
-/* ================================= */
-
 /* General Styling */
 body {
     font-family: 'Roboto', sans-serif;
@@ -16,7 +5,6 @@ body {
     margin: 0;
     background-color: #f4f4f4;
     color: #4a4a4a;
-    word-wrap: break-word; /* Mencegah teks panjang merusak layout */
 }
 
 /* Header */
@@ -35,24 +23,19 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px; /* Sedikit mengurangi jarak untuk mobile */
+    gap: 20px;
     flex-wrap: wrap;
 }
 
 .logo {
     height: 70px;
-    width: 70px; /* Memberi ukuran lebar agar konsisten */
-    object-fit: contain; /* Memastikan gambar logo tidak gepeng */
+    width: auto;
 }
 
 .logo.permata {
     border-radius: 50%;
     background-color: white;
     padding: 5px;
-}
-
-.header-text {
-    max-width: 500px; /* Membatasi lebar teks agar tidak terlalu melebar di desktop */
 }
 
 .header-text h1, .header-text h2, .header-text p {
@@ -67,8 +50,8 @@ header {
 }
 
 .header-text h2 {
-    font-size: 1.2rem; /* Ukuran font sub-judul sedikit dikecilkan */
-    font-weight: 400; /* Dibuat lebih tipis */
+    font-size: 1.5rem;
+    font-weight: 500;
     opacity: 0.9;
 }
 
@@ -82,14 +65,14 @@ header {
 
 /* Main Content */
 main {
-    padding: 1rem; /* Padding utama untuk mobile */
+    padding: 20px;
     max-width: 1200px;
     margin: 2rem auto;
 }
 
 section {
     background: #ffffff;
-    padding: 1.5rem; /* Padding di dalam section untuk mobile */
+    padding: 30px;
     margin-bottom: 30px;
     border-radius: 12px;
 }
@@ -102,7 +85,6 @@ section {
     font-family: 'Montserrat', sans-serif;
     color: #d32f2f;
     margin-top: 0;
-    line-height: 1.3; /* Menambah jarak antar baris judul */
 }
 
 /* Poster Section */
@@ -118,15 +100,15 @@ section {
 /* Event Grid Layout */
 .event-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ukuran minimum kartu dikecilkan untuk mobile */
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
 }
 
 .event-card {
     background: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
-    padding: 20px;
+    padding: 25px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
@@ -156,7 +138,7 @@ section {
 
 .event-detail svg {
     color: #d32f2f;
-    flex-shrink: 0; /* Mencegah ikon menjadi gepeng */
+    flex-shrink: 0;
 }
 
 .event-detail p {
@@ -182,36 +164,10 @@ section {
 /* Footer */
 footer {
     text-align: center;
-    padding: 25px 1rem; /* Menambahkan padding horizontal untuk footer */
+    padding: 25px;
     background: #333;
     color: #f4f4f4;
     font-size: 0.9rem;
 }
 
-
-/* ================================= */
-/* ===== ATURAN KHUSUS UNTUK MOBILE ===== */
-/* ================================= */
-@media (max-width: 600px) {
-    .header-container {
-        flex-direction: column;
-        gap: 20px; /* Jarak antar elemen header di mobile */
-    }
-    .logo {
-        height: 60px;
-        width: 60px;
-    }
-    .header-text h1 { font-size: 1.6rem; } /* Ukuran judul utama dikecilkan */
-    .header-text h2 { font-size: 1rem; } /* Ukuran sub-judul dikecilkan */
-    .tagline { font-size: 1.1rem; }
-    
-    main {
-        padding: 0.5rem; /* Padding utama diperkecil di mobile */
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-    section {
-        padding: 1rem; /* Padding dalam section diperkecil */
-        margin-bottom: 1.5rem;
-    }
-}
+/* TIDAK ADA LAGI KODE @media, SEMUA SUDAH DIHAPUS */
