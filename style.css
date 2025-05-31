@@ -1,35 +1,51 @@
-/* General Styling */
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.7;
-    margin: 0;
-    background-color: #f4f4f4;
-    color: #4a4a4a;
+/* --- Pengaturan Global & Font --- */
+:root {
+    --warna-merah: #d32f2f;
+    --warna-merah-gelap: #a02121;
+    --warna-teks: #333;
+    --warna-latar: #f7f8fc;
+    --font-judul: 'Montserrat', sans-serif;
+    --font-isi: 'Roboto', sans-serif;
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-isi);
+    line-height: 1.6;
+    background-color: var(--warna-latar);
+    color: var(--warna-teks);
+}
+
+/* --- Gaya Dasar (Mobile First) --- */
 
 /* Header */
 header {
-    background: #d32f2f;
-    background-image: linear-gradient(135deg, #d32f2f 0%, #a02121 100%);
-    color: #ffffff;
-    padding: 2rem 1rem;
+    background: var(--warna-merah);
+    color: white;
+    padding: 1.5rem 1rem;
     text-align: center;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .header-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Default: susun ke bawah untuk HP */
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .logo {
-    height: 70px;
-    width: auto;
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
 }
 
 .logo.permata {
@@ -38,136 +54,158 @@ header {
     padding: 5px;
 }
 
-.header-text h1, .header-text h2, .header-text p {
-    margin: 0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
 .header-text h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 700;
+    font-family: var(--font-judul);
+    font-size: 1.8rem;
+    font-weight: 900;
 }
 
 .header-text h2 {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 400;
     opacity: 0.9;
+}
+.header-text p {
+    font-size: 0.9rem;
 }
 
 .tagline {
+    font-family: var(--font-judul);
     margin-top: 1.5rem;
     font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    display: inline-block;
+    font-weight: 700;
 }
 
-/* Main Content */
+/* Konten Utama */
 main {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 2rem auto;
+    padding: 1rem;
 }
 
 section {
-    background: #ffffff;
-    padding: 30px;
-    margin-bottom: 30px;
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
     border-radius: 12px;
-}
-
-#pengantar, #poster {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     text-align: center;
 }
 
-#pengantar h2, #jadwal-acara h2, #poster h2 {
-    font-family: 'Montserrat', sans-serif;
-    color: #d32f2f;
-    margin-top: 0;
+section h2 {
+    font-family: var(--font-judul);
+    font-size: 1.6rem;
+    color: var(--warna-merah);
+    margin-bottom: 1rem;
 }
 
-/* Poster Section */
-#poster img { 
-    max-width: 100%; 
-    height: auto; 
-    border-radius: 12px; 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2); 
-    margin-top: 1rem; 
-    max-width: 500px; 
+section p {
+    font-size: 1rem;
+    color: #555;
+    max-width: 60ch; /* Batasi panjang baris agar mudah dibaca */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Event Grid Layout */
+#poster img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* Kartu Jadwal Acara */
 .event-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
+    display: flex; /* Di HP, kita buat jadi flex column saja */
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .event-card {
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
+    background-color: #fafafa;
+    border: 1px solid #eee;
     border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.event-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    padding: 1.5rem;
+    text-align: left;
 }
 
 .event-card h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    margin-top: 0;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #d32f2f;
-    padding-bottom: 10px;
+    font-family: var(--font-judul);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .event-detail {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-}
-
-.event-detail svg {
-    color: #d32f2f;
-    flex-shrink: 0;
+    margin-bottom: 0.5rem;
 }
 
 .event-detail p {
-    margin: 0;
+    font-size: 0.95rem;
+    text-align: left;
+    color: var(--warna-teks);
 }
 
 .button {
-    background-color: #d32f2f;
-    color: #ffffff;
-    padding: 12px 25px;
+    display: block;
+    width: 100%;
+    background-color: var(--warna-merah);
+    color: white;
+    padding: 12px;
+    text-align: center;
     text-decoration: none;
     border-radius: 8px;
-    font-weight: 500;
-    text-align: center;
-    margin-top: auto;
-    transition: background-color 0.3s;
+    font-weight: 700;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
 }
 
 .button:hover {
-    background-color: #a02121;
+    background-color: var(--warna-merah-gelap);
 }
 
 /* Footer */
 footer {
+    background-color: #333;
+    color: #ddd;
     text-align: center;
-    padding: 25px;
-    background: #333;
-    color: #f4f4f4;
+    padding: 2rem 1rem;
     font-size: 0.9rem;
 }
+footer p {
+    margin-bottom: 0.5rem;
+}
 
-/* TIDAK ADA LAGI KODE @media, SEMUA SUDAH DIHAPUS */
+
+/* --- Gaya untuk Tablet & Desktop (Layar Sedang) --- */
+@media (min-width: 768px) {
+    /* Header */
+    .header-container {
+        flex-direction: row; /* Kembali ke samping-sampingan */
+        justify-content: space-between;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .header-text h1 { font-size: 2.2rem; }
+    .header-text h2 { font-size: 1.1rem; }
+
+    /* Konten Utama */
+    main { padding: 2rem; }
+    section { padding: 2.5rem; }
+
+    /* Kartu Jadwal Acara menjadi Grid */
+    .event-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk tablet */
+    }
+}
+
+
+/* --- Gaya untuk Desktop Besar (Layar Lebar) --- */
+@media (min-width: 1024px) {
+    /* Kartu Jadwal Acara menjadi 3 kolom */
+    .event-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #poster img {
+        max-width: 500px; /* Batasi lebar poster di desktop */
+    }
+}
